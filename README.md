@@ -448,13 +448,44 @@ testing.push("d");//["a", "b", "c", "d"]
 ```
 # 8. 函式 Function
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
+函式只會在被呼叫的時候才執行，函式本身並不會主動執行。
 
+- 函式基本寫法
 ```javascript
-//最基礎的function樣式和用法
-number();
 
-function number() {
+function number() {//定義函式內容
     console.log('我是一個function') 
 }
-//結果：
+
+number(); //呼叫number函式
+number(); //呼叫number函式
+//函式可被無限次呼叫
+```
+
+- 函式帶入參數
+```javascript
+
+function addition(num1, num2) {
+    var total = num1 + num2;
+    console.log('總和是'+ total); 
+}
+addition(1,2); //總和是3
+addition(3,3); //總和是6
+
+//total屬於地區性變數（local variable)
+//不能在函式外使用
+```
+
+- 有回傳的函式
+```javascript
+
+function square(num) {
+    return num * num
+}
+
+var a = square(4);
+console.log(a); //16
+
+//需要用變數儲起函式回傳的數值
+
 ```
