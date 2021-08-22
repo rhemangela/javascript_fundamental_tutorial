@@ -1,3 +1,15 @@
+# 0. 前言
+
+這編程教學會以javascript語言，去教導編程的基礎概念。
+
+- 我為何要選擇Javascript作為教學語言？
+答： 編程世界裡有各式各樣的語言，但其原理也是萬變不離其中。初學者不必執著於該由哪一種語言入手。只要學懂一門語言，將來學另一種語言也會事半功倍。
+並且，javascript暫時仍是全世界最多人使用的程式語言，並且廣泛地應用在網頁前後端、手機程式開發。 建議初學者學習熱門語言，往後學習更容易尋找到相關的網上教學資源。
+
+
+- 這教程的內容是編程必學的基礎嗎？
+  答： 是的。這教程內容猶如電腦編程的「加減乘除」，是屬於入門技術。 就好比無論你想學習會計、還是學習微積分，其根基都必定是加減乘除。
+
 # 1. 安裝軟件
 
 VSCode
@@ -18,6 +30,9 @@ NodeJS
 
 # 3. 變數與常數 (variable and constant)
 
+影片教學：
+https://www.youtube.com/watch?v=bib3ueAjRQg
+
 在電腦程式裡面，變數是電腦記憶體中可以存放資料的地方，Javascript 會在變數宣告與使用的時候動態配置記憶體。而在變數所存放的內容，則有可能在程式執行時被改變。
 若以其值是否可以在程式運作中被改變，可以分為**變數**與**常數**。在程式的運作過程中變數的值可以被改變，而常數的值一經宣告之後就不可以改變。
 
@@ -34,6 +49,8 @@ const A = 1;
 每個變數只須被宣告一次。
 
 - 未初始化 （initialization)
+  變數可以在宣告的時候不賦值（value)。
+  但常數則必須在宣告的時候同時賦值。
 
 ```javascript
 //不帶初始數值。 a 及 b 沒有數值。
@@ -177,19 +194,18 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ```javascript
 //例子
-3 +
-  4 *
-    0(
-      // 3
-      3 + 4
-    ) *
-    0; // 0
+3 + 4 * 0; // 3
+(3 + 4) * 0; // 0
 3 < 2 || 1 > 2 || 3 + 1 > 2; // true
 ```
 
 # 5. if ... else 條件指令
 
-當程式流程在進行時，需要根據某個條件來決定是否執行接下來的動作時，就需要用到 if ... else 敘述。
+當程式流程在進行時，需要根據某個條件來決定是否執行接下來的動作時，就需要用到 `if ... else` 敘述。
+
+影片教學:
+https://www.youtube.com/watch?v=_2BFEHB-PSA
+
 
 - `if...`
 - `if...else...`
@@ -280,6 +296,28 @@ if (num % 2 == 0) {
     2. 會員消費滿\$500 元可享有額外 85 折
     3. 非會員消費滿\$500 元有 9 折
 
+`if...else`在每一次判斷只限於兩樣事物之間二選一。如果需要在多樣事物之間選一，可以考慮使用`switch...case`。
+
+```javascript
+//switch...case 例子
+var trafficLight = "dark";
+
+switch(trafficLight){
+    case "red":
+        console.log("紅燈，要停車");
+        break;
+    case "yellow":
+        console.log("黃燈，準備開車");
+        break;
+    case "green":
+        console.log("綠燈，可以行車");
+        break;
+    default:
+        console.log("不是交通燈顏色！");
+        break;
+}
+```
+
 # 6. 迴圈 Looping
 
 在處理資料的時候，時常會需要重複執行某些相同的步驟；而迴圈 (loop) 的作用是讓指定的某段敘述在條件符合的情況下一直重覆執行，是程式設計中很重要的一種控制結構。我們可以利用迴圈來進行重覆性的資料輸入、處理與輸出。
@@ -311,7 +349,10 @@ for (let i = 1; i < 10; i++) {
     console.log(i, "*", j, "=", i * j);
   }
 }
+//現實編程裡，nested for loop 一般最多用到2層
+//若果要用到3層,就不是一個好的程式設計
 ```
+  
 
 - - 例題 6.1：
 
@@ -357,11 +398,11 @@ do {
 # 7. 陣列 Array
 
 陣列是指一串的資料。
+如果我們視「變數」是一格櫃桶，那麼陣列就是一排的櫃桶。
 
 ```javascript
 let a = []; //空陣列
 let b = [10, 20, 30, 40, 50]; //只儲存數字的陣列
-let c = [100, "Hello", true]; //儲存不同資料類別的陣列
 let d = [1, 2, [3, 4, 5], 6]; //陣列中的陣列
 
 //index 陣列的索引
@@ -371,15 +412,15 @@ console.log(b[4]); //50
 //陣列的長度
 console.log(b.length); //5
 ```
-
+- 一般而言，一個陣列中，只會放置同類型的資料。
 - 陣列 配合 for loop 的使用 的例子 1：
 
 ```javascript
-let b = [10, 20, 30, 40, 50];
-for (i = 0; i < b.length; i++) {
-  console.log(b[i]);
+let userName = ["陳大文", "王小明", "Chris Wong"];
+for (i = 0; i < userName.length; i++) {
+  console.log(userName[i]);
 }
-//結果： 10 20 30 40 50
+//結果： 陳大文 王小明 Chris Wong
 ```
 
 - 陣列 配合 for loop 的使用 的例子 2：
@@ -391,4 +432,29 @@ for (i = 0; i < b.length; i++) {
   console.log(b[i] * b[i]);
 }
 //結果： 1 4 9 16 25
+```
+- 陣列的常用方法和功能
+  https://twitter.com/profulsadangi/status/1288053880010334208
+  
+```javascript
+let testing = ["a","b","c"];
+
+// 顯示第1個元素（element)
+console.log(testing[0]); //"a"
+// 顯示元素的數量
+console.log(testing.length);//3
+//增加元素
+testing.push("d");//["a", "b", "c", "d"]
+```
+# 8. 函式 Function
+「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
+
+```javascript
+//最基礎的function樣式和用法
+number();
+
+function number() {
+    console.log('我是一個function') 
+}
+//結果：
 ```
