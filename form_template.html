@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>這是表單範本</title>
+</head>
+<body>
+    <form id="form1" action="#">
+        請輸入歲數： <input required type="text"  id="age" placeholder="請在此處輸入"value=""><br>
+        <input type="submit" value="提交" onclick="onSubmit()">
+      </form> 
+    
+      <p id="demo"></p>
+      
+      <script>
+      function onSubmit() {
+          console.log("hi");
+        var form1 = document.getElementById("form1");
+        var result_text = "";
+        var age = document.getElementById("age").value;
+        if (age < 0) {
+          result_text = "歲數不能是負值"
+      } else if (age <= 2) {
+  result_text = "嬰兒"
+} else if (age <= 10) {
+          result_text = "兒童"
+      } else if (age <= 20) {
+          result_text = "少年"
+      } else if (age <= 40) {
+          result_text = "青年"
+      } else if (age <= 64) {
+          result_text = "中年"
+      } else {
+          result_text = "長者"  
+      }
+        document.getElementById("demo").innerHTML = result_text;
+      }
+      </script>
+</body>
+</html>
