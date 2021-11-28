@@ -9,7 +9,6 @@
 * 這教程的內容是編程必學的基礎嗎？
   答： 是的。這教程內容猶如電腦編程的「加減乘除」，是屬於入門技術。 就好比無論你想學習會計、還是學習微積分，其根基都必定是加減乘除。
 
-$$
 # 1. 安裝軟件
 
 VSCode
@@ -206,7 +205,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 影片教學:
 https://www.youtube.com/watch?v=_2BFEHB-PSA
 
-
 - `if...`
 - `if...else...`
 - `if...else...if...`
@@ -297,14 +295,15 @@ if (num % 2 == 0) {
     3. 非會員消費滿\$500 元有 9 折
 
 - - 例題 5：
-將輸入的分鐘，變成「小時、分鐘」的格式。
+    將輸入的分鐘，變成「小時、分鐘」的格式。
+
 ```javascript
 var minutes = 130;
 //預期結果： 2小時10分鐘
 ```
 
 - - 例題 6：
-判斷3個變數的數字，是否順序排列。
+    判斷 3 個變數的數字，是否順序排列。
 
 ```javascript
 //例子一 ：
@@ -330,9 +329,7 @@ var a = 88;
 var b = 88;
 var c = 88;
 //預期結果 ： 三個數字相同
-
 ```
-
 
 `if...else`在每一次判斷只限於兩樣事物之間二選一。如果需要在多樣事物之間選一，可以考慮使用`switch...case`。
 
@@ -340,19 +337,19 @@ var c = 88;
 //switch...case 例子
 var trafficLight = "dark";
 
-switch(trafficLight){
-    case "red":
-        console.log("紅燈，要停車");
-        break;
-    case "yellow":
-        console.log("黃燈，準備開車");
-        break;
-    case "green":
-        console.log("綠燈，可以行車");
-        break;
-    default:
-        console.log("不是交通燈顏色！");
-        break;
+switch (trafficLight) {
+  case "red":
+    console.log("紅燈，要停車");
+    break;
+  case "yellow":
+    console.log("黃燈，準備開車");
+    break;
+  case "green":
+    console.log("綠燈，可以行車");
+    break;
+  default:
+    console.log("不是交通燈顏色！");
+    break;
 }
 ```
 
@@ -391,7 +388,6 @@ for (let i = 1; i < 10; i++) {
 //若果要用到3層,就不是一個好的程式設計
 ```
 
-
 - - 例題 6.1：
 
     找出所有 100 以內的質數。
@@ -411,7 +407,8 @@ for (let i = 1; i < 10; i++) {
 
 - - 例題 6.3：
 
-   運算變數的階乘。
+  運算變數的階乘。
+
 ```javascript
 var factorial = 5;
 //結果： 5*4*3*2*1 ＝ 120
@@ -457,6 +454,7 @@ console.log(b[4]); //50
 //陣列的長度
 console.log(b.length); //5
 ```
+
 - 一般而言，一個陣列中，只會放置同類型的資料。
 - 陣列 配合 for loop 的使用 的例子 1：
 
@@ -478,28 +476,65 @@ for (i = 0; i < b.length; i++) {
 }
 //結果： 1 4 9 16 25
 ```
+
 - 陣列的常用方法和功能
   https://twitter.com/profulsadangi/status/1288053880010334208
 
 ```javascript
-let testing = ["a","b","c"];
+let testing = ["a", "b", "c"];
 
 // 顯示第1個元素（element)
 console.log(testing[0]); //"a"
 // 顯示元素的數量
-console.log(testing.length);//3
+console.log(testing.length); //3
 //增加元素
-testing.push("d");//["a", "b", "c", "d"]
+testing.push("d"); //["a", "b", "c", "d"]
 ```
+
+- - 例題 7.1：
+
+試將兩組陣列相對應的值相加。
+
+```javascript
+//例子 ：
+var array1 = [1, 0, 2, 3, 4];
+var array2 = [3, 5, 6, 7, 8, 13];
+//預期結果 ： [4, 5, 8, 10, 12, 13]
+```
+
+- - 例題 7.2：
+
+試找出陣列中最大的值。
+
+```javascript
+//例子 ：
+var arr = [-5, 7, -6, 0, -1];
+//預期結果 ： 7
+```
+
+答案參考： https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-4.php
+
+- - 例題 7.3：
+
+將陣列的數值由小至大排列。
+
+```javascript
+//例子 ：
+var arr1 = [3, 8, 7, 6, 5, -4, 3, 2, 1];
+//預期結果 ： -4,-3,1,2,3,5,6,7,8
+```
+
 # 8. 函式 Function
+
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
 函式只會在被呼叫的時候才執行，函式本身並不會主動執行。
 
 - 函式基本寫法
-```javascript
 
-function number() {//定義函式內容
-    console.log('我是一個function')
+```javascript
+function number() {
+  //定義函式內容
+  console.log("我是一個function");
 }
 
 number(); //呼叫number函式
@@ -508,30 +543,31 @@ number(); //呼叫number函式
 ```
 
 - 函式帶入參數
-```javascript
 
+```javascript
 function addition(num1, num2) {
-    var total = num1 + num2;
-    console.log('總和是'+ total);
+  var total = num1 + num2;
+  console.log("總和是" + total);
 }
-addition(1,2); //總和是3
-addition(3,3); //總和是6
+addition(1, 2); //總和是3
+addition(3, 3); //總和是6
 
 //total屬於地區性變數（local variable)
 //不能在函式外使用
 ```
 
 - 有回傳的函式
-```javascript
 
+```javascript
 function square(num) {
-    return num * num
+  return num * num;
 }
 
 var a = square(4);
 console.log(a); //16
 
 //需要用變數儲起函式回傳的數值
-
 ```
+
+$$
 $$
