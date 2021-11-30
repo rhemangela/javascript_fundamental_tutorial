@@ -414,9 +414,9 @@ var factorial = 5;
 //結果： 5*4*3*2*1 ＝ 120
 ```
 
-```javascript
-//while loop 例子
+- while loop 例子：-
 
+```javascript
 let i = 9;
 while (i >= 0) {
   console.log(i);
@@ -425,9 +425,9 @@ while (i >= 0) {
 //結果： 9876543210
 ```
 
-```javascript
-//do while 例子
+- do while 例子：-
 
+```javascript
 let i = 9;
 do {
   console.log(i);
@@ -496,10 +496,25 @@ testing.push("d"); //["a", "b", "c", "d"]
 試將兩組陣列相對應的值相加。
 
 ```javascript
-//例子 ：
-var array1 = [1, 0, 2, 3, 4];
-var array2 = [3, 5, 6, 7, 8, 13];
-//預期結果 ： [4, 5, 8, 10, 12, 13]
+//例子1 ：
+var arr_1 = [1, 0, 2, 3, 4];
+var arr_2 = [3, 5, 6, 7, 8];
+//預期結果 ： [4, 5, 8, 10, 12]
+
+//例子2 ：
+var arr_1 = [];
+var arr_2 = [3, 5, 6, 7, 8];
+//預期結果 ： [4, 5, 6, 7, 8]
+
+//例子3 ：
+var arr_1 = [];
+var arr_2 = [];
+//預期結果 ： []
+
+//例子4 ：
+var arr_1 = [1, 0, 2];
+var arr_2 = [3, 5, 1, 7, 4];
+//預期結果 ： [4, 5, 8, 10, 12, 10]
 ```
 
 - - 例題 7.2：
@@ -510,18 +525,6 @@ var array2 = [3, 5, 6, 7, 8, 13];
 //例子 ：
 var arr = [-5, 7, -6, 0, -1];
 //預期結果 ： 7
-```
-
-答案參考： https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-4.php
-
-- - 例題 7.3：
-
-將陣列的數值由小至大排列。
-
-```javascript
-//例子 ：
-var arr1 = [3, 8, 7, 6, 5, -4, 3, 2, 1];
-//預期結果 ： -4,-3,1,2,3,5,6,7,8
 ```
 
 # 8. 函式 Function
@@ -568,6 +571,3 @@ console.log(a); //16
 
 //需要用變數儲起函式回傳的數值
 ```
-
-$$
-$$
