@@ -480,6 +480,17 @@ for (i = 0; i < b.length; i++) {
 - 陣列的常用方法和功能
   https://twitter.com/profulsadangi/status/1288053880010334208
 
+![alt text](array_cheatsheet.png "Title")
+
+- 陣列 配合 map 的使用 的例子：
+```javascript
+//運算數列裡的平方數
+let b = [1, 2, 3, 4, 5];
+let c = b.map((x) => x * x);
+console.log(c);
+//結果： 1 4 9 16 25
+```
+
 ```javascript
 let testing = ["a", "b", "c"];
 
