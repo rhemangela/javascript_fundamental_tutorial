@@ -570,6 +570,28 @@ addition(3, 3); //總和是6
 //不能在函式外使用
 ```
 
+- - 例題 8.1：
+
+試設計一個可以計算圓周的函式。
+
+```javascript
+//例子 ：
+var radius = 3;
+findCircumstance(radius);
+//預期結果 ： 18.84
+```
+
+
+- - 例題 8.2：
+
+試設計一個可以運算出陣列裡最小數值的函式。
+
+```javascript
+//例子 ：
+var arr = [-5, 7, -6, 0, -1]
+findMax(arr);
+//預期結果 ： -6
+```
 - 有回傳的函式
 
 ```javascript
