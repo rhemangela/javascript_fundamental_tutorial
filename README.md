@@ -534,7 +534,7 @@ var arr_2 = [3, 5, 1, 7, 4];
 
 ```javascript
 //例子 ：
-var arr = [-5, 7, -6, 0, -1];
+var arr = [5, 7, -6, 0, -1];
 //預期結果 ： 7
 ```
 
@@ -542,9 +542,13 @@ var arr = [-5, 7, -6, 0, -1];
 
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
 函式只會在被呼叫的時候才執行，函式本身並不會主動執行。
+![alt text](function.png "Title")
 
 - 函式基本寫法
-
+  - 函式語法結構:-
+  ![alt text](function_syntax_1.png "Title")
+  - 呼叫函式:-
+  ![alt text](function_syntax_2.png "Title")
 ```javascript
 function number() {
   //定義函式內容
@@ -566,10 +570,8 @@ function addition(num1, num2) {
 addition(1, 2); //總和是3
 addition(3, 3); //總和是6
 
-//total屬於地區性變數（local variable)
-//不能在函式外使用
 ```
-
+- 區域變數 (Local variable)：當變數在一個函數內宣告，就只能在該函式中使用；全域變數 (Global variable)：當變數在函數範圍之外宣告，就能在程式各處使用
 - - 例題 8.1：
 
 試設計一個可以計算圓周的函式。
@@ -591,6 +593,23 @@ findCircumstance(radius);
 var arr = [-5, 7, -6, 0, -1]
 findMax(arr);
 //預期結果 ： -6
+```
+- - 例題 8.3：
+
+試設計一個可以判斷餐廳級別的函式。
+  ![alt text](restaurant_grade.png "Title")
+  - 輸入參數:
+    1. 員工接種疫苗情況
+    2. 食客接種疫苗情況
+  - 輸出結果：
+    1. 餐廳所屬級別
+    2. 每枱可容納的人數
+```javascript
+//例子 ：
+var staff_vaccine : 2;
+var customer_vaccine: 1;
+findRestaurantGrade(staff_vaccine, customer_vaccine);
+//預期結果 ： 屬於D區，可容納最多8人。
 ```
 - 有回傳的函式
 
