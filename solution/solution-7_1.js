@@ -5,12 +5,15 @@ var new_arr = [];
 var length;
 
 if (arr_1.length == 0) {
+  //如果arr_1 是空陣列
   new_arr = arr_2;
 } else if (arr_2.length == 0) {
+  //如果arr_2 是空陣列
   new_arr = arr_1;
 } else {
   if (arr_1.length >= arr_2.length) {
-    //如果arr_1 更長
+    //如果arr_1 更長，或
+    //如果arr_1 與 arr_2 一樣長度
     new_arr = arr_1;
     for (i = 0; arr_2.length > i; i++) {
       new_arr[i] = new_arr[i] + arr_2[i];
