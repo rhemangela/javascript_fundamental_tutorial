@@ -591,7 +591,7 @@ findCircumstance(radius);
 ```javascript
 //例子 ：
 var arr = [-5, 7, -6, 0, -1]
-findMax(arr);
+findMin(arr);
 //預期結果 ： -6
 ```
 - - 例題 8.3：
