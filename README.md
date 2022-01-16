@@ -480,7 +480,7 @@ for (i = 0; i < b.length; i++) {
 - 陣列的常用方法和功能
   https://twitter.com/profulsadangi/status/1288053880010334208
 
-![alt text](array_cheatsheet.png "Title")
+![alt text](img/array_cheatsheet.png "Title")
 
 - 陣列 配合 map 的使用 的例子：
 ```javascript
@@ -542,13 +542,13 @@ var arr = [5, 7, -6, 0, -1];
 
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
 函式只會在被呼叫的時候才執行，函式本身並不會主動執行。
-![alt text](function.png "Title")
+![alt text](img/function.png "Title")
 
 - 函式基本寫法
   - 函式語法結構:-
-  ![alt text](function_syntax_1.png "Title")
+  ![alt text](img/function_syntax_1.png "Title")
   - 呼叫函式:-
-  ![alt text](function_syntax_2.png "Title")
+  ![alt text](img/function_syntax_2.png "Title")
 ```javascript
 function number() {
   //定義函式內容
@@ -560,8 +560,8 @@ number(); //呼叫number函式
 //函式可被無限次呼叫
 ```
 
-- 函式帶入參數
-
+- 函式帶入參數 (parameters)
+![alt text](img/function_syntax_3.png "Title")
 ```javascript
 function addition(num1, num2) {
   var total = num1 + num2;
@@ -578,8 +578,8 @@ addition(3, 3); //總和是6
 
 ```javascript
 //例子 ：
-var radius = 3;
-findCircumstance(radius);
+var r = 3;
+findCircumstance(r);
 //預期結果 ： 18.84
 ```
 
@@ -597,7 +597,7 @@ findMin(arr);
 - - 例題 8.3：
 
 試設計一個可以判斷餐廳級別的函式。
-  ![alt text](restaurant_grade.png "Title")
+  ![alt text](img/restaurant_grade.png "Title")
   - 輸入參數:
     1. 員工接種疫苗情況
     2. 食客接種疫苗情況
@@ -611,15 +611,33 @@ var customer_vaccine: 1;
 findRestaurantGrade(staff_vaccine, customer_vaccine);
 //預期結果 ： 屬於D區，可容納最多8人。
 ```
-- 有回傳的函式
+- 有回傳（return）的函式
+
+回傳（return）的意義
+函式可以透過 return 回傳函式運算完的結果，回傳的值可在函式外透過宣告變數來儲存。
+例如，於上面的例題 8.1，該函式的功能是計算圓周，所以，我們會預期把函式裡計算得出的答案，回傳給一個變數。（也就是說，利用一個變數，去儲存這個答案），寫法如下：
 
 ```javascript
-function square(num) {
-  return num * num;
+
+findCircumstance(r){
+  return (2 *  Math.PI * r)
 }
 
-var a = square(4);
-console.log(a); //16
+var answer = findCircumstance(3);
+console.log(answer);
+//answer會儲起函式回傳的數值
+```
 
-//需要用變數儲起函式回傳的數值
+若函式不回傳值，則可省略 return。但要注意，當 return 執行時，解譯器會跳出該函式，所以如果 return 後面還有程式碼，則不會被執行。因此，用 return 回傳空值也具有「中止」程式碼的功能。
+所以，一般情況下，return應該會寫在函式內的最後一行。
+
+- - 例題 8.4：
+
+試設計一個可以回傳平方數的函式。
+```javascript
+
+var a = square(4);
+// a = 16;
+var a = square(10);
+//a = 100;
 ```
