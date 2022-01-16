@@ -600,16 +600,26 @@ findMin(arr);
   ![alt text](img/restaurant_grade.png "Title")
   - 輸入參數:
     1. 員工接種疫苗情況
-    2. 食客接種疫苗情況
+    2. 員工是否全部有做檢測
+    3. 食客接種疫苗情況
+   
   - 輸出結果：
-    1. 餐廳所屬級別
-    2. 每枱可容納的人數
+
 ```javascript
-//例子 ：
+//例子1 ：
 var staff_vaccine : 2;
+var staff_testing: false;
 var customer_vaccine: 1;
-findRestaurantGrade(staff_vaccine, customer_vaccine);
-//預期結果 ： 屬於D區，可容納最多8人。
+findGrade(staff_vaccine, staff_testing, customer_vaccine);
+//預期結果 ： 屬於D區。
+
+//例子2 ：
+var staff_vaccine : 0;
+var staff_testing: true;
+var customer_vaccine: 0;
+
+findGrade(staff_vaccine, staff_testing, customer_vaccine,);
+//預期結果 ： 屬於B區。
 ```
 - 有回傳（return）的函式
 
