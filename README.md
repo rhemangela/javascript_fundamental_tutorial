@@ -89,7 +89,7 @@ const PI = 22 / 7;
 
 # 4. 基本數值型態 （typings)
 
-資料可以分為2類別：**primitive type**以及**object type**
+資料可以分為2類別：**primitive type**以及**reference type**
 兩者其中最大的差別，是前者是儲存數值（pass by value),而後者則是儲存記憶體位置（pass by reference). 這一點比較抽象，於後面介紹到object type的資料型態時，會再以例子作解釋。
 
 ![alt text](img/data_types.png "Data Types")
@@ -470,7 +470,7 @@ do {
 
 # 7. 陣列 Array
 
-<em>第7-9課的陣列Array、物件Object、函式Function，都是屬於物件型別（object type)。</em>
+<em>第7-9課的陣列Array、物件Object、函式Function，都是屬於參考型別（reference type)。</em>
 
 陣列是指一串的資料。
 如果我們視「變數」是一格櫃桶，那麼陣列就是一排的櫃桶。
@@ -575,6 +575,45 @@ var arr = [5, 7, -6, 0, -1];
 ```
 
 # 8. 物件 Object 
+
+物件是以用一個大括號 {} 的方式來建立。
+```javascript
+//物件例子：
+
+var Angela = {
+  age: 20,
+  genda: "female",
+  married: true,
+  familyMembers:["Sam","飛飛"]
+}
+```
+以上的物件例子裡，共包含4個屬性（properties)： ```age, genda, married, familyMembers```
+
+要提取個別的屬性資料，方法如下：
+```javascript
+console.log(Angela.age); //會得到 20 這個結果
+console.log(Angela.familyMembers[1]); //會得到 飛飛 這個結果
+```
+##### 新增物件屬性
+
+如果要在物件外，直接新增屬性到物件內的話，可以這樣寫：
+```javascript
+Angela.dog = "BB";
+console.log(Angela.dog); //存取值就會得到 BB
+```
+
+前述提到，物件是reference type (參考型別），其所記載是記憶體的位置reference，而非實際的資料value.
+```javascript
+let object1= {animal:"dog"};
+let object2 = object1;
+object1.name = "cat";
+console.log(object2.name);//結果是 cat
+```
+以上結果是因為object本身是記載記憶體地址，所以```let object2 = object1```實際操作的是`object2`記載`object1`的所在位置。
+當電腦執行```object1.name = "cat";```時，就是在修改objectA的地址所指向的物件的屬性。亦因為```object2```本來就是指向與```object1```相同地址的物件，所以修改```object1```就等如修改```object2```
+
+![alt text](img/passByReference.png "pass by reference")
+
 # 9. 函式 Function
 
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
