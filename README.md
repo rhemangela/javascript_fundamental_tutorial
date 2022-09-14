@@ -12,10 +12,15 @@
 # 1. 安裝軟件
 
 VSCode
+- 編寫程式碼的工具
 (https://code.visualstudio.com/download)
 
 NodeJS
+- Javascript需要一個可執行Javascript的環境。瀏覽器（Chrome, Safari，firefox等等）內置Javascript引擎，可以直接執行Javascript。而除了瀏覽器外，另一個選擇是安裝Node軟件,可以為電腦提供一個可以運行Javascript的環境。
 (https://nodejs.org/en/download/)
+
+
+[點擊此處下載網頁範本（以瀏覽器運行javascript)](index.html)
 
 # 2. VSCode 基礎操作
 
@@ -84,6 +89,12 @@ const PI = 22 / 7;
 
 # 4. 基本數值型態 （typings)
 
+資料可以分為2類別：**primitive type**以及**object type**
+兩者其中最大的差別，是前者是儲存數值（pass by value),而後者則是儲存記憶體位置（pass by reference). 這一點比較抽象，於後面介紹到object type的資料型態時，會再以例子作解釋。
+
+![alt text](img/data_types.png "Data Types")
+
+此處首先介紹primitive type類別：
 - 數值 (number)
 - 字串 (string)
 - 布林 (boolean)
@@ -108,6 +119,26 @@ let a;
 
 //null
 let b = null;
+```
+ ## 4.1 弱型別的概念
+ Javascript是弱型別（weak typing)的電腦語言，意即，對於資料型別系統(Type System)的檢查並不嚴格，以下為例子：
+```javascript
+let a = 123; //number
+let b = "1"; //string
+let c = a+b; //
+
+console.log(c)//答案： 1231
+console.log(typeof(c))//string
+```
+在上述例子可以看到，2個不同的類別（number以及string）相加，javascript將其答案自動歸類為string類別。這種寬鬆的類別處理，也會導致日後容易造成各種bugs的根源。也因此，強型別**Typescript**電腦語言的出現，就是補足了javascript的弊處。
+```typescript
+//typescript是強型別的javascript
+
+//每個資料於宣告時，都必須同時宣告其類別
+//如果類別與數際數值的型態不相附，便會出現警告
+//程式也會無法繼續運行
+let a : number = 123; 
+let b : number = "1"; //出現警告
 ```
 
 - `console.log()`使用法
@@ -439,8 +470,13 @@ do {
 
 # 7. 陣列 Array
 
+<em>第7-9課的陣列Array、物件Object、函式Function，都是屬於物件型別（object type)。</em>
+
 陣列是指一串的資料。
 如果我們視「變數」是一格櫃桶，那麼陣列就是一排的櫃桶。
+
+![alt text](img/array_drawer.png "drawer")
+
 
 ```javascript
 let a = []; //空陣列
@@ -538,7 +574,8 @@ var arr = [5, 7, -6, 0, -1];
 //預期結果 ： 7
 ```
 
-# 8. 函式 Function
+# 8. 物件 Object 
+# 9. 函式 Function
 
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
 函式只會在被呼叫的時候才執行，函式本身並不會主動執行。
@@ -572,7 +609,7 @@ addition(3, 3); //總和是6
 
 ```
 - 區域變數 (Local variable)：當變數在一個函數內宣告，就只能在該函式中使用；全域變數 (Global variable)：當變數在函數範圍之外宣告，就能在程式各處使用
-- - 例題 8.1：
+- - 例題 9.1：
 
 試設計一個可以計算圓周的函式。
 
@@ -584,7 +621,7 @@ findCircumstance(r);
 ```
 
 
-- - 例題 8.2：
+- - 例題 9.2：
 
 試設計一個可以運算出陣列裡最小數值的函式。
 
@@ -594,7 +631,7 @@ var arr = [-5, 7, -6, 0, -1]
 findMin(arr);
 //預期結果 ： -6
 ```
-- - 例題 8.3：
+- - 例題 9.3：
 
 試設計一個可以判斷餐廳級別的函式。
   ![alt text](img/restaurant_grade.png "Title")
@@ -641,7 +678,7 @@ console.log(answer);
 若函式不回傳值，則可省略 return。但要注意，當 return 執行時，解譯器會跳出該函式，所以如果 return 後面還有程式碼，則不會被執行。因此，用 return 回傳空值也具有「中止」程式碼的功能。
 所以，一般情況下，return應該會寫在函式內的最後一行。
 
-- - 例題 8.4：
+- - 例題 9.4：
 
 試設計一個可以回傳平方數的函式。
 ```javascript
