@@ -80,8 +80,8 @@ var b = "hello";
 ```javascript
 //良好的命名方式
 let userId;
-var user_id;
-var user01;
+let user_id;
+let user01;
 const PI = 22 / 7;
 ```
 
@@ -329,7 +329,7 @@ if (num % 2 == 0) {
     將輸入的分鐘，變成「小時、分鐘」的格式。
 
 ```javascript
-var minutes = 130;
+let minutes = 130;
 //預期結果： 2小時10分鐘
 ```
 
@@ -338,27 +338,27 @@ var minutes = 130;
 
 ```javascript
 //例子一 ：
-var a = 1;
-var b = 2;
-var c = 5;
+let a = 1;
+let b = 2;
+let c = 5;
 //預期結果 ： 小至大順序
 
 //例子二 ：
-var a = 50;
-var b = 21;
-var c = 0;
+let a = 50;
+let b = 21;
+let c = 0;
 //預期結果 ： 大至小順序
 
 //例子三 ：
-var a = 6;
-var b = 10;
-var c = 2;
+let a = 6;
+let b = 10;
+let c = 2;
 //預期結果 ： 不順序
 
 //例子四 ：
-var a = 88;
-var b = 88;
-var c = 88;
+let a = 88;
+let b = 88;
+let c = 88;
 //預期結果 ： 三個數字相同
 ```
 
@@ -366,7 +366,7 @@ var c = 88;
 
 ```javascript
 //switch...case 例子
-var trafficLight = "dark";
+let trafficLight = "dark";
 
 switch (trafficLight) {
   case "red":
@@ -441,7 +441,7 @@ for (let i = 1; i < 10; i++) {
   運算變數的階乘。
 
 ```javascript
-var factorial = 5;
+let factorial = 5;
 //結果： 5*4*3*2*1 ＝ 120
 ```
 
@@ -544,23 +544,23 @@ testing.push("d"); //["a", "b", "c", "d"]
 
 ```javascript
 //例子1 ：
-var arr_1 = [1, 0, 2, 3, 4];
-var arr_2 = [3, 5, 6, 7, 8];
+let arr_1 = [1, 0, 2, 3, 4];
+let arr_2 = [3, 5, 6, 7, 8];
 //預期結果 ： [4, 5, 8, 10, 12]
 
 //例子2 ：
-var arr_1 = [];
-var arr_2 = [3, 5, 6, 7, 8];
+let arr_1 = [];
+let arr_2 = [3, 5, 6, 7, 8];
 //預期結果 ： [4, 5, 6, 7, 8]
 
 //例子3 ：
-var arr_1 = [];
-var arr_2 = [];
+let arr_1 = [];
+let arr_2 = [];
 //預期結果 ： []
 
 //例子4 ：
-var arr_1 = [1, 0, 2];
-var arr_2 = [3, 5, 1, 7, 4];
+let arr_1 = [1, 0, 2];
+let arr_2 = [3, 5, 1, 7, 4];
 //預期結果 ： [4, 5, 3, 7, 4]
 ```
 
@@ -570,7 +570,7 @@ var arr_2 = [3, 5, 1, 7, 4];
 
 ```javascript
 //例子 ：
-var arr = [5, 7, -6, 0, -1];
+let arr = [5, 7, -6, 0, -1];
 //預期結果 ： 7
 ```
 
@@ -580,7 +580,7 @@ var arr = [5, 7, -6, 0, -1];
 ```javascript
 //物件例子：
 
-var Angela = {
+let Angela = {
   age: 20,
   genda: "female",
   married: true,
@@ -609,8 +609,8 @@ let object2 = object1;
 object1.name = "cat";
 console.log(object2.name);//結果是 cat
 ```
-以上結果是因為object本身是記載記憶體地址，所以```let object2 = object1```實際操作的是`object2`記載`object1`的所在位置。
-當電腦執行```object1.name = "cat";```時，就是在修改objectA的地址所指向的物件的屬性。亦因為```object2```本來就是指向與```object1```相同地址的物件，所以修改```object1```就等如修改```object2```
+以上結果是因為object本身是記載記憶體地址(pass by reference) ，所以```let object2 = object1```實際操作的將`object1`的所在記憶體位置存放在```object2```裡。
+當電腦執行```object1.name = "cat";```時，就是在修改object1的地址所指向的物件的屬性。亦因為```object2```本來就是指向與```object1```相同地址的物件，所以修改```object1```就等如修改```object2```
 
 ![alt text](img/passByReference.png "pass by reference")
 
@@ -625,6 +625,9 @@ console.log(object2.name);//結果是 cat
   ![alt text](img/function_syntax_1.png "Title")
   - 呼叫函式:-
   ![alt text](img/function_syntax_2.png "Title")
+
+
+- 不帶參數函式
 ```javascript
 function number() {
   //定義函式內容
@@ -636,25 +639,50 @@ number(); //呼叫number函式
 //函式可被無限次呼叫
 ```
 
-- 函式帶入參數 (parameters)
-![alt text](img/function_syntax_3.png "Title")
+- 帶入參數 (parameters) 函式
 ```javascript
 function addition(num1, num2) {
-  var total = num1 + num2;
+  let total = num1 + num2;
   console.log("總和是" + total);
 }
+
+//呼叫參數
 addition(1, 2); //總和是3
 addition(3, 3); //總和是6
 
 ```
-- 區域變數 (Local variable)：當變數在一個函數內宣告，就只能在該函式中使用；全域變數 (Global variable)：當變數在函數範圍之外宣告，就能在程式各處使用
+
+- 回傳值（return value) 函式
+```javascript
+function subtraction(num1, num2) {
+  return num1 - num2
+}
+console.log(subtraction(4,3));//1
+```
+
+##### 區域變數 (Local variable) 與 全堿變數(global variable)
+  區域變數 (Local variable)：當變數在一個函數內宣告，就只能在該函式中使用；
+  全域變數 (Global variable)：當變數在函數範圍之外宣告，就能在程式各處使用
+
+```javascript
+// 此處 不 可呼叫carName
+
+function myFunction() {
+  let carName = "Volvo";
+  // carName是區堿變數
+  // 此處可呼叫carName
+}
+
+// 此處 不 可呼叫carName
+```
+
 - - 例題 9.1：
 
 試設計一個可以計算圓周的函式。
 
 ```javascript
 //例子 ：
-var r = 3;
+let r = 3;
 findCircumstance(r);
 //預期結果 ： 18.84
 ```
@@ -666,7 +694,7 @@ findCircumstance(r);
 
 ```javascript
 //例子 ：
-var arr = [-5, 7, -6, 0, -1]
+let arr = [-5, 7, -6, 0, -1]
 findMin(arr);
 //預期結果 ： -6
 ```
@@ -683,16 +711,16 @@ findMin(arr);
 
 ```javascript
 //例子1 ：
-var staff_vaccine : 2;
-var staff_testing: false;
-var customer_vaccine: 1;
+let staff_vaccine : 2;
+let staff_testing: false;
+let customer_vaccine: 1;
 findGrade(staff_vaccine, staff_testing, customer_vaccine);
 //預期結果 ： 屬於D區。
 
 //例子2 ：
-var staff_vaccine : 0;
-var staff_testing: true;
-var customer_vaccine: 0;
+let staff_vaccine : 0;
+let staff_testing: true;
+let customer_vaccine: 0;
 
 findGrade(staff_vaccine, staff_testing, customer_vaccine,);
 //預期結果 ： 屬於B區。
@@ -709,7 +737,7 @@ findCircumstance(r){
   return (2 *  Math.PI * r)
 }
 
-var answer = findCircumstance(3);
+let answer = findCircumstance(3);
 console.log(answer);
 //answer會儲起函式回傳的數值
 ```
@@ -722,8 +750,8 @@ console.log(answer);
 試設計一個可以回傳平方數的函式。
 ```javascript
 
-var a = square(4);
+let a = square(4);
 // a = 16;
-var a = square(10);
+let a = square(10);
 //a = 100;
 ```
