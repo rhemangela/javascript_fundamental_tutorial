@@ -518,7 +518,16 @@ for (i = 0; i < b.length; i++) {
 
 ![alt text](img/array_cheatsheet.png "Title")
 
-- 陣列 配合 map 的使用 的例子：
+- 陣列 配合 ``push`` 的使用 的例子：
+```javascript
+let a = [];
+a.push(91);
+a.push(923);
+console.log(a);
+//結果：[91, 923]
+```
+
+- 陣列 配合 ``map`` 的使用 的例子：
 ```javascript
 //運算數列裡的平方數
 let b = [1, 2, 3, 4, 5];
@@ -614,6 +623,35 @@ console.log(object2.name);//結果是 cat
 
 ![alt text](img/passByReference.png "pass by reference")
 
+
+- Object 實際使用例子：
+  常用於網站上的資料呈現、傳輸。例如傳送一個whatsapp 訊息的資料格式如下：
+
+```javascript
+{
+  "messages": [
+    {
+      "messageNumber": 1,
+      "id": "gBEGNRkQlzApAgkmn4pjmXQ0XrU",
+      "body": "Test message",
+      "fromMe": true,
+      "self": 1,
+      "isForwarded": 0,
+      "author": "78005553535@c.us",
+      "time": 946684800,
+      "chatId": "78005553535@c.us",
+      "type": "chat",
+      "senderName": "780005553535@c.us",
+      "caption": null,
+      "quotedMsgId": null,
+      "metadata": {},
+      "chatName": "78005553535"
+    }
+  ]
+}
+```
+- - 例題 8.1： //todo
+
 # 9. 函式 Function
 
 「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
@@ -659,6 +697,9 @@ function subtraction(num1, num2) {
 }
 console.log(subtraction(4,3));//1
 ```
+若函式不回傳值，則可省略 return。但要注意，當 return 執行時，解譯器會跳出該函式，所以如果 return 後面還有程式碼，則不會被執行。因此，用 return 回傳空值也具有「中止」程式碼的功能。
+所以，一般情況下，return應該會寫在函式內的最後一行。
+
 
 ##### 區域變數 (Local variable) 與 全堿變數(global variable)
   區域變數 (Local variable)：當變數在一個函數內宣告，就只能在該函式中使用；
@@ -698,54 +739,8 @@ let arr = [-5, 7, -6, 0, -1]
 findMin(arr);
 //預期結果 ： -6
 ```
+
 - - 例題 9.3：
-
-試設計一個可以判斷餐廳級別的函式。
-  ![alt text](img/restaurant_grade.png "Title")
-  - 輸入參數:
-    1. 員工接種疫苗情況
-    2. 員工是否全部有做檢測
-    3. 食客接種疫苗情況
-   
-  - 輸出結果：
-
-```javascript
-//例子1 ：
-let staff_vaccine : 2;
-let staff_testing: false;
-let customer_vaccine: 1;
-findGrade(staff_vaccine, staff_testing, customer_vaccine);
-//預期結果 ： 屬於D區。
-
-//例子2 ：
-let staff_vaccine : 0;
-let staff_testing: true;
-let customer_vaccine: 0;
-
-findGrade(staff_vaccine, staff_testing, customer_vaccine,);
-//預期結果 ： 屬於B區。
-```
-- 有回傳（return）的函式
-
-回傳（return）的意義
-函式可以透過 return 回傳函式運算完的結果，回傳的值可在函式外透過宣告變數來儲存。
-例如，於上面的例題 8.1，該函式的功能是計算圓周，所以，我們會預期把函式裡計算得出的答案，回傳給一個變數。（也就是說，利用一個變數，去儲存這個答案），寫法如下：
-
-```javascript
-
-findCircumstance(r){
-  return (2 *  Math.PI * r)
-}
-
-let answer = findCircumstance(3);
-console.log(answer);
-//answer會儲起函式回傳的數值
-```
-
-若函式不回傳值，則可省略 return。但要注意，當 return 執行時，解譯器會跳出該函式，所以如果 return 後面還有程式碼，則不會被執行。因此，用 return 回傳空值也具有「中止」程式碼的功能。
-所以，一般情況下，return應該會寫在函式內的最後一行。
-
-- - 例題 9.4：
 
 試設計一個可以回傳平方數的函式。
 ```javascript
@@ -754,4 +749,26 @@ let a = square(4);
 // a = 16;
 let a = square(10);
 //a = 100;
+```
+
+- - 例題 9.4： //todo
+
+試設計一個可以列印2個參之間所有數值的函式。
+```javascript
+
+square(1,5);
+// 預期結果： [1,2,3,4,5]
+square(-4,1);
+// 預期結果： [-4,-3,-2,-1,0,1]
+```
+
+- - 例題 9.5： //todo
+
+試設計一個計算某數值出現的次數的函式。
+```javascript
+
+countOccurance([1,2,2,0,5],5);
+// 預期結果： 出現次數是 1 次
+countOccurance([0,2,2],5);
+// 預期結果： 出現次數是 0 次
 ```
