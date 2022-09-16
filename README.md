@@ -601,7 +601,7 @@ console.log(testing.length); //3
 testing.push("d"); //["a", "b", "c", "d"]
 ```
 
-- - 例題 7.1：
+- - 例題 7.1*：
 
 試將兩組陣列相對應的值相加。
 
@@ -711,7 +711,7 @@ console.log(object1.messages[0].body); //  你好
 
 
 - 例題 8.1：
-  計算平均分
+  試編寫計算平均分的函式
 
 ```javascript
 const result = {chinese:83, english:60, math: 99};
@@ -719,6 +719,7 @@ const result = {chinese:83, english:60, math: 99};
 averageMarks(result);
 // 預期結果：81分
 //提示: 需要用到Object.values
+//提示: 需要用到Array.reduce
 ```
 
 - 例題 8.2：
@@ -836,18 +837,18 @@ let a = square(10);
 //a = 100;
 ```
 
-- - 例題 9.4： //todo
+- - 例題 9.4：
 
 試設計一個可以列印2個參之間所有數值的函式。
 ```javascript
 
-square(1,5);
+printRange(1,5);
 // 預期結果： [1,2,3,4,5]
-square(-4,1);
+printRange(-4,1);
 // 預期結果： [-4,-3,-2,-1,0,1]
 ```
 
-- - 例題 9.5： //todo
+- - 例題 9.5：
 
 試設計一個計算某數值出現的次數的函式。
 ```javascript
