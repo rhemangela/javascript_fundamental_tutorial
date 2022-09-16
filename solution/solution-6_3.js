@@ -1,8 +1,12 @@
-var factorial = 5;
-var result_num = 1;
-var result_str = "";
-for (var i = factorial; i > 0; i--) {
-  result_num = result_num * i;
-  result_str = result_str + i + "*";
+var i, j;
+
+for (i = 2; i < 100; i++) {
+  for (j = 2; j <= i; j++)
+    if (!(i % j)) {
+      //if dividable by any integer
+      break;
+    }
+  if (j > i / j) {
+    console.log(i, "is prime");
+  }
 }
-console.log(result_str, "=", result_num);

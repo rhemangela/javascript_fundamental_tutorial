@@ -1,12 +1,10 @@
-var i, j;
+var rows = 5;
+var str = "";
 
-for (i = 2; i < 100; i++) {
-  for (j = 2; j <= i; j++)
-    if (!(i % j)) {
-      //if dividable by any integer
-      break;
-    }
-  if (j > i / j) {
-    console.log(i, "is prime");
+for (var i = 1; i <= rows; i++) {
+  for (var j = 1; j <= i; j++) {
+    str = str + j;
   }
+  console.log(str);
+  str = "";
 }

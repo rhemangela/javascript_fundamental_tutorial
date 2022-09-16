@@ -34,7 +34,8 @@ NodeJS
 
 # 3. 變數與常數 (variable and constant)
 
-影片教學：
+>影片教學：
+Javascript 教學 EP.1 | 常數、變數、data類別 介紹
 https://www.youtube.com/watch?v=bib3ueAjRQg
 
 在電腦程式裡面，變數是電腦記憶體中可以存放資料的地方，Javascript 會在變數宣告與使用的時候動態配置記憶體。而在變數所存放的內容，則有可能在程式執行時被改變。
@@ -84,7 +85,9 @@ let user_id;
 let user01;
 const PI = 22 / 7;
 ```
-
+>影片教學:
+Javascript 教學 EP.3 | 常數、變數的命名規則
+https://www.youtube.com/watch?v=wQIsOAG_KZ8&t=22s
 - 保留名字 (reserved words)
 
 # 4. 基本數值型態 （typings)
@@ -100,6 +103,9 @@ const PI = 22 / 7;
 - 布林 (boolean)
 - `null` 和 `underfined`的概念
   ​
+>影片教學:
+Javascript 教學 EP.4 | null 及 undefined 概念 
+https://www.youtube.com/watch?v=L5sidrq9xjI&t=2s
 
 ```javascript
 //number
@@ -151,7 +157,12 @@ console.log("一星期共有", weekdays, "天"); //output: 一星期共有7天
 
 # 5. 運算子 Operator
 
-- 數學運算子 （Arithmrtic Operator)
+
+### 數學運算子 （Arithmrtic Operator)
+
+>影片教學:
+Javascript 教學 EP.5 | 數學運算子 
+https://www.youtube.com/watch?v=yUB-YcoxoR4&t=8s
 
 ```javascript
 let a = 100;
@@ -184,11 +195,10 @@ a = Math.abs(-273); // 絕對數值
 a = (3.1415).toFixed(2); // 保留兩個小數點
 ```
 
-其他 javascript 內置數學算式參考：
-
+>其他 javascript 內置數學算式參考：
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 
-- 關係運算子 (Relation Operator)
+### 關係運算子 (Relation Operator)
 
 ```javascript
 3 > 3; // false
@@ -201,7 +211,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 3 !== "3"; //true
 ```
 
-- 邏輯運算子 (Logical Operator)
+### 邏輯運算子 (Logical Operator)
 
   and: `&&` 兩者為 true，結果才會是 true
 
@@ -215,6 +225,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 3 > 2 || 1 > 2; //true
 !true; //false
 ```
+>影片教學:
+Javascript 教學 EP.6 | 比較及邏輯運算子
+https://www.youtube.com/watch?v=2VlQcp9OG9g
 
 - 運算子先後次序
   1. 括號內`( )` 最優先處理
@@ -233,7 +246,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 當程式流程在進行時，需要根據某個條件來決定是否執行接下來的動作時，就需要用到 `if ... else` 敘述。
 
-影片教學:
+>影片教學:
+Javascript 教學 EP.2 | if else 使用方法
 https://www.youtube.com/watch?v=_2BFEHB-PSA
 
 - `if...`
@@ -290,11 +304,11 @@ if (num % 2 == 0) {
 }
 ```
 
-- - 例題 1：
+- - 例題 5.1：
 
     判斷數字是雙數或單數。
 
-- - 例題 2：
+- - 例題 5.2：
 
     判斷歲數的年齡層：
 
@@ -305,7 +319,7 @@ if (num % 2 == 0) {
     5. 41-64 歲： 中年
     6. 65 歲或以上： 長者
 
-- - 例題 3：
+- - 例題 5.3：
 
     計算年份是否為閏年。條件：
 
@@ -317,7 +331,7 @@ if (num % 2 == 0) {
 
     （測試年份： 1984、1988、1992、1996、2000、2004、2008、2012、2016 為閏年）
 
-- - 例題 4：
+- - 例題 5.4：
 
     計算可獲得的折購金額：
 
@@ -325,7 +339,7 @@ if (num % 2 == 0) {
     2. 會員消費滿\$500 元可享有額外 85 折
     3. 非會員消費滿\$500 元有 9 折
 
-- - 例題 5：
+- - 例題 5.5：
     將輸入的分鐘，變成「小時、分鐘」的格式。
 
 ```javascript
@@ -333,7 +347,7 @@ let minutes = 130;
 //預期結果： 2小時10分鐘
 ```
 
-- - 例題 6：
+- - 例題 5.6*：
     判斷 3 個變數的數字，是否順序排列。
 
 ```javascript
@@ -386,6 +400,10 @@ switch (trafficLight) {
 
 # 6. 迴圈 Looping
 
+>影片教學:
+Javascript 教學 EP.7 | 迴圈Loop (1) 
+https://www.youtube.com/watch?v=bO0pC4SJvHk
+
 在處理資料的時候，時常會需要重複執行某些相同的步驟；而迴圈 (loop) 的作用是讓指定的某段敘述在條件符合的情況下一直重覆執行，是程式設計中很重要的一種控制結構。我們可以利用迴圈來進行重覆性的資料輸入、處理與輸出。
 
 - for loop: `for...`
@@ -416,16 +434,9 @@ for (let i = 1; i < 10; i++) {
   }
 }
 //現實編程裡，nested for loop 一般最多用到2層
-//若果要用到3層,就不是一個好的程式設計
 ```
 
-- - 例題 6.1：
-
-    找出所有 100 以內的質數。
-    質數（Prime number）指在大於 1 的自然數中，除了 1 和該數自身外，無法被其他自然數整除的數。
-    （答案： 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97）
-
-- - 例題 6.2：
+- - 例題 6.1*：
 
     試用 nested loop 寫出以下數字
     1
@@ -436,7 +447,7 @@ for (let i = 1; i < 10; i++) {
     123456
     ...
 
-- - 例題 6.3：
+- - 例題 6.2*：
 
   運算變數的階乘。
 
@@ -468,7 +479,7 @@ do {
 //結果： 9876543210
 ```
 - 無窮迴圈 infinite loop
-  無窮迴圈（英語：infinite loop）或稱為無限循環，是指程式的控制流程一直在重複執行某一段程式碼，無法結束的情形，其原因可能是因為程式中的迴圈沒有設結束迴圈條件，或是結束迴圈的條件不可能成立等。 **寫程式必須確保迴圈完結的有效條件，避免無窮迴圈的出現**
+  『無窮迴圈』或稱為『無限循環』，是指程式的控制流程一直在重複執行某一段程式碼，無法結束的情形，其原因可能是因為程式中的迴圈沒有設結束迴圈條件，或是結束迴圈的條件不可能成立等。 **寫程式必須確保迴圈完結的有效條件，避免無窮迴圈的出現**
 ```javascript
 //infinite loop 例子
 let i = 9;
@@ -505,10 +516,15 @@ for (var i = 1; i <= 5; i++) {
 }
 //結果： 1,2,4,5
 ```
+- - 例題 6.3*：
+
+    找出所有 100 以內的質數。
+    質數（Prime number）指在大於 1 的自然數中，除了 1 和該數自身外，無法被其他自然數整除的數。
+    （答案： 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97）
 
 # 7. 陣列 Array
 
-<em>第7-9課的陣列Array、物件Object、函式Function，都是屬於參考型別（reference type)。</em>
+>第7-9課的陣列Array、物件Object、函式Function，都是屬於參考型別（reference type)。
 
 陣列是指一串的資料。
 如果我們視「變數」是一格櫃桶，那麼陣列就是一排的櫃桶。
