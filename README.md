@@ -120,7 +120,7 @@ let a;
 //null
 let b = null;
 ```
- ## 4.1 弱型別的概念
+ ### 4.1 弱型別的概念
  Javascript是弱型別（weak typing)的電腦語言，意即，對於資料型別系統(Type System)的檢查並不嚴格，以下為例子：
 ```javascript
 let a = 123; //number
@@ -467,6 +467,44 @@ do {
 
 //結果： 9876543210
 ```
+- 無窮迴圈 infinite loop
+  無窮迴圈（英語：infinite loop）或稱為無限循環，是指程式的控制流程一直在重複執行某一段程式碼，無法結束的情形，其原因可能是因為程式中的迴圈沒有設結束迴圈條件，或是結束迴圈的條件不可能成立等。 **寫程式必須確保迴圈完結的有效條件，避免無窮迴圈的出現**
+```javascript
+//infinite loop 例子
+let i = 9;
+while (i >= 0) {
+  console.log(i);
+}
+//作為counter的 i 其值沒有被改變
+//導致(i >= 0)條件一直維持true
+//而造成infinite loop
+```
+- ```break```與```continue```的使用
+
+  ```break```: 直接離開迴圈
+  ```continue```： 離開當前的迴圈並重新運行
+```javascript
+//break 例子
+for (var i = 1; i <= 5; i++) {
+    if (i === 3) {
+        console.log("Three");
+        break;
+    } else {
+        console.log(i);
+    }
+}
+//結果： 1,2,Three
+
+//continue 例子
+for (var i = 1; i <= 5; i++) {
+    if (i === 3) {
+        continue;
+    } else {
+        console.log(i);
+    }
+}
+//結果： 1,2,4,5
+```
 
 # 7. 陣列 Array
 
@@ -625,15 +663,15 @@ console.log(object2.name);//結果是 cat
 
 
 - Object 實際使用例子：
-  常用於網站上的資料呈現、傳輸。例如傳送一個whatsapp 訊息的資料格式如下：
+  以```JSON``` （JavaScript Object Notation)作為資料傳送的形態，常用於網站上的資料呈現、傳輸。例如傳送一個whatsapp 訊息的資料格式如下：
 
 ```javascript
-{
+const response = {
   "messages": [
     {
       "messageNumber": 1,
       "id": "gBEGNRkQlzApAgkmn4pjmXQ0XrU",
-      "body": "Test message",
+      "body": "你好",
       "fromMe": true,
       "self": 1,
       "isForwarded": 0,
@@ -649,8 +687,39 @@ console.log(object2.name);//結果是 cat
     }
   ]
 }
+
+console.log(object1.messages[0].body); //  你好
 ```
-- - 例題 8.1： //todo
+- 了解更多關於JSON:-
+(https://timothyrobards.medium.com/understanding-json-in-javascript-5098876d0915)
+
+
+- 例題 8.1：
+  計算平均分
+
+```javascript
+const result = {chinese:83, english:60, math: 99};
+
+averageMarks(result);
+// 預期結果：81分
+//提示: 需要用到Object.values
+```
+
+- 例題 8.2：
+  承上題，計算平均分等級：
+
+    1. 90 - 100分：A
+    2. 80 - 90分：B
+    3. 70 - 80分：C
+    4. 60 - 70分： D
+    5. 50 - 60分： E
+    6. 50分以下： F
+
+```javascript
+let result = 81;
+grading(result);
+// 預期結果：B
+```
 
 # 9. 函式 Function
 
