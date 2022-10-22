@@ -723,6 +723,27 @@ averageMarks(result);
 ```
 
 - 例題 8.2：
+  承上題，找出最高分數：
+  //todo
+
+```javascript
+let result = {chinese:83, english:60, math: 99};
+highestMark(result);
+// 預期結果：99
+//提示: 需要用到Object.values
+```
+- 例題 8.3：
+  承上題，找出最高分的科目：
+  //todo
+
+```javascript
+let result = {chinese:83, english:60, math: 99};
+highestMarkSubject(result);
+// 預期結果：math
+//提示: 需要用到valueOf()
+```
+
+- 例題 8.4：
   承上題，計算平均分等級：
 
     1. 90 - 100分：A
