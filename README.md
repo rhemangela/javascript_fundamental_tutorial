@@ -719,12 +719,10 @@ const result = {chinese:83, english:60, math: 99};
 averageMarks(result);
 // 預期結果：81分
 //提示: 需要用到Object.values
-//提示: 需要用到Array.reduce
 ```
 
 - 例題 8.2：
   承上題，找出最高分數：
-  //todo
 
 ```javascript
 let result = {chinese:83, english:60, math: 99};
@@ -732,15 +730,15 @@ highestMark(result);
 // 預期結果：99
 //提示: 需要用到Object.values
 ```
-- 例題 8.3：
+- 例題 8.3*：
   承上題，找出最高分的科目：
-  //todo
 
 ```javascript
 let result = {chinese:83, english:60, math: 99};
 highestMarkSubject(result);
 // 預期結果：math
-//提示: 需要用到valueOf()
+//提示: 需要用到Object.values
+//提示: 需要用到Object.keys
 ```
 
 - 例題 8.4：
